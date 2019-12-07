@@ -1,6 +1,7 @@
 package com.example.graphingcalculator;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -61,6 +62,16 @@ public class EquationItemAdapter extends ArrayAdapter<Equation> {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 visibilities.set(position, b);
+            }
+        });
+
+        Button deleteButton = convertView.findViewById(R.id.deleteButton);
+        deleteButton.setTextColor(getItem(position).getColor());
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                equations.remove(position);
+                notifyDataSetChanged();
             }
         });
 

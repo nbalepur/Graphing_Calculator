@@ -8,11 +8,7 @@ import android.graphics.Paint;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
-
-import androidx.core.content.ContextCompat;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class MyCanvas extends View {
 
@@ -71,7 +67,7 @@ public class MyCanvas extends View {
                 paint.setColor(graphColor);
                 paint.setStrokeWidth(10);
 
-                final double spacing = 0.0001 * Math.min(rightNum, topNum);
+                final double spacing = 0.0001 * rightNum;
 
                 //tiny increments to represent x values, then draws line between small increments
                 for (double i = leftNum; i <= rightNum - spacing; i += spacing) {
